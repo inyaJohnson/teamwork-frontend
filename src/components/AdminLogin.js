@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Input, Form, LoginForm, RowDiv, AdminLoginBackground, H4, H5, Item } from './style';
+import { LoginButton, Input, Form, LoginForm, RowDiv, AdminLoginBackground, H4, H5, Item } from './style';
 
 const AdminLogin = () => {
     return(
@@ -12,7 +12,7 @@ const AdminLogin = () => {
                         <Input type='text' placeholder='Username' />
                         <Input type='password' placeholder='Password' />
                     </RowDiv>
-                    <Button>Login</Button>
+                    <LoginButton>Login</LoginButton>
                     <H5>
                         Switch account 
                             <Item activeClassName='is-active' to='/admin' >Admin</Item> |

@@ -4,98 +4,8 @@ import  styled, { css }  from 'styled-components';
 import userBackground from './user-background.jpg';
 import adminBackground from './admin-background.jpg';
 
-export const InputStyle = css`
-    padding: 1em 1em;
-    border-radius: 10px;
-    margin: 5px 5px;
-    font-size: 1em;
-`;
-
-export const Button = styled.button`
-    background-color: green;
-    color: white;
-    width: 88%;
-    ${InputStyle};
-`;
-
-export const Input = styled.input`
-    ${InputStyle}
-`;
-export const H4 = styled.h4`
-    font-weight: bolder;
-`;
-
-export const H5 = styled.h5`
-    font-weight: normal;
-`;
-
-
-export const Form = styled.form`
-    display: flex;
-    flex-flow: column wrap;
-    border-radius:10px;
-    padding : 50px;
-    align-items : center;
-    `;
-
-
-// export const List = styled.ul`
-//     display : flex;
-//     list-style: none;
-//     width: auto;
-//     justify-content: space-around;
-// `;
-
-
-const NavigationLink = ({ className, children, to, activeClassName }) =>{
-    return <NavLink className={className} to={to} activeClassName={activeClassName}> {children} </NavLink>
-}
-
-export const Item = styled(NavigationLink)`
-    margin : 3px 6px;
-    color: green;
-    text-decoration: none;
-    // &.is-active{
-    //     color:red;
-    // } 
-    &:hover  {
-        color:red;
-    }
-`;
-
-
-// export const AddUserForm = styled.form`
-//     display: flex;
-//     flex-flow: column wrap;
-//     background-color: white;
-//     opacity: 0.5;
-//     border-radius:10px;
-//     padding : 70px;
-//     width: 50%;
-//     margin-top: 30px;
-
-//     `;
-
-// export const AddUserInput = styled.input`
-//     ${InputStyle};
-//     width: 100%;
-//     margin : 5px 5px;
-// `;
-
-// export const Div = css `
-//     display: flex;
-// `;
-
-
-
-// export const AddUserInputDiv = styled.div`
-//     display: flex;
-//     width: 100%;
-// `;
-
 export const RowDiv = styled.div`
     display: flex;
-    // flex-flow: row wrap;
 `;
 
 export const ColumnDiv = styled.div`
@@ -107,6 +17,110 @@ export const ColumnDiv = styled.div`
 export const Spacer = styled.div`
     flex-grow: 1;
 `
+
+export const InputStyle = css`
+    padding: 1em 1em;
+    border-radius: 10px;
+    margin: 5px;
+    font-size: 1em;
+`;
+
+export const Button = styled.button`
+    background-color: green;
+    color: white;
+    ${InputStyle};
+`;
+
+export const LoginButton = styled(Button)`
+    width: 88%
+`
+
+export const Input = styled.input`
+    ${InputStyle}
+`;
+export const H4 = styled.h4`
+    font-weight: bolder;
+`;
+
+export const H4Div = styled.div`
+border:thin solid red;
+text-align: left;
+background-color: green;
+width: 100%;
+`;
+
+export const StyledH4 = styled(H4)`
+    text-align: left;
+    background-color: green;
+    color: white;
+    margin: 0px;
+    padding: 20px;
+`;
+
+export const H5 = styled.h5`
+    font-weight: normal;
+`;
+
+export const Form = styled.form`
+    display: flex;
+    flex-flow: column wrap;
+    border-radius:10px;
+    padding : 50px;
+    align-items : center;
+    `;
+
+const NavigationLink = ({ className, children, to, activeClassName }) =>{
+    return <NavLink className={className} to={to} activeClassName={activeClassName}> {children} </NavLink>
+}
+
+export const Item = styled(NavigationLink)`
+    margin : 3px 6px;
+    color: green;
+    text-decoration: none;
+    &:hover  {
+        color:red;
+    }
+`;
+
+export const NavMenuItem = styled(NavigationLink)`
+    color: green;
+    text-decoration: none;
+    &.is-active{
+        color:red;
+    } 
+    &:hover  {
+        color:red;
+    }
+`;
+
+export const NavMenu = styled(ColumnDiv)`
+    list-style: none;
+    width: 20%;
+    justify-content: space-around;
+    background-color: #DDDDDD;
+    min-height: 100vh;
+`;
+
+export const Dashboard = styled.div`
+    width: 80%;
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
+`;
+
+
+
+export const AddUserForm = styled.form`
+    display: flex;
+    flex-flow: column wrap;
+    margin-top: 30px;
+    `;
+
+export const AddUserInput = styled.input`
+    ${InputStyle};
+    // width: 100%;
+    margin : 5px 5px;
+`;
 
 // export const AdminDiv = styled.div`
 //     flex-flow: column wrap;
@@ -137,3 +151,4 @@ export const AdminLoginBackground = styled.div`
     background: url(${adminBackground}) transparent no-repeat center;
     ${Background};
 `;
+
