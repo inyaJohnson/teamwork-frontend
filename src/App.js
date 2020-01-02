@@ -3,10 +3,10 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import UserLogin from './components/UserLogin';
 import AdminLogin from './components/AdminLogin';
-import Users from './components/Admin/Users';
-import Feed from './components/Admin/Feed';
-import Statistics from './components/Admin/Statistics';
-import Logout from './components/Admin/Logout';
+import Users from './components/admin/Users';
+import Feed from './components/admin/Feed';
+import Statistics from './components/admin/Statistics';
+import Logout from './components/admin/Logout';
 
 function App() {
   return (

@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import adminLogin from './adminLogin';
+import { adminLoginReducer, usersListReducer, FeedReducer } from './admin';
+import { userLoginReducer }from './user';
 
 const reducer = combineReducers({
-    adminLogin
+    adminLogin: adminLoginReducer,  userLogin: userLoginReducer, usersList : usersListReducer,
+    feedList : FeedReducer
 });
 
 export default reducer;

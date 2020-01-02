@@ -108,8 +108,6 @@ export const Dashboard = styled.div`
     flex-flow: column wrap;
 `;
 
-
-
 export const AddUserForm = styled.form`
     display: flex;
     flex-flow: column wrap;
@@ -118,14 +116,8 @@ export const AddUserForm = styled.form`
 
 export const AddUserInput = styled.input`
     ${InputStyle};
-    // width: 100%;
     margin : 5px 5px;
 `;
-
-// export const AdminDiv = styled.div`
-//     flex-flow: column wrap;
-//     ${Background};
-// `;
 
 export const LoginForm = styled.div`
     display: flex;
@@ -152,3 +144,21 @@ export const AdminLoginBackground = styled.div`
     ${Background};
 `;
 
+export const LoginError = styled.div`
+    color: red;
+`
+
+export const OrderedList = styled.ol`
+text-align : left;
+`
+
+export const UnorderedList = styled.ul`
+    list-style-type: none;  
+    text-align : left;
+`
+
+
+export const ListItem = styled.li`
+    padding: 10px;
+    font-size: bold;
+`
