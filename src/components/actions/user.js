@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import { USER_LOGIN_FULFILLED, USER_LOGIN_FAILED } from '../constant';
+import { USER_LOGIN_FULFILLED, USER_LOGIN_FAILED } from '../admin_user/constant';
 
 export function LoginDispatch(data){
     return function (dispatch){

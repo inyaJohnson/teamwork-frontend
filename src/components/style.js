@@ -1,11 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import  styled, { css }  from 'styled-components';
-import userBackground from './user-background.jpg';
-import adminBackground from './admin-background.jpg';
+import userBackground from './user/user-background.jpg';
+import adminBackground from './admin/admin-background.jpg';
 
 export const RowDiv = styled.div`
     display: flex;
+    background-color : #EEEEEE;
 `;
 
 export const ColumnDiv = styled.div`
@@ -15,7 +16,7 @@ export const ColumnDiv = styled.div`
     `;
 
 export const Spacer = styled.div`
-    flex-grow: 1;
+    flex-grow: 0.5;
 `
 
 export const InputStyle = css`
@@ -31,6 +32,7 @@ export const Button = styled.button`
     ${InputStyle};
 `;
 
+
 export const LoginButton = styled(Button)`
     width: 88%
 `
@@ -38,6 +40,8 @@ export const LoginButton = styled(Button)`
 export const Input = styled.input`
     ${InputStyle}
 `;
+
+
 export const H4 = styled.h4`
     font-weight: bolder;
 `;
@@ -51,10 +55,8 @@ width: 100%;
 
 export const StyledH4 = styled(H4)`
     text-align: left;
-    background-color: green;
-    color: white;
     margin: 0px;
-    padding: 20px;
+    padding: 10px;
 `;
 
 export const H5 = styled.h5`
@@ -95,17 +97,44 @@ export const NavMenuItem = styled(NavigationLink)`
 
 export const NavMenu = styled(ColumnDiv)`
     list-style: none;
-    width: 20%;
+    width: 300px;
     justify-content: space-around;
-    background-color: #DDDDDD;
-    min-height: 100vh;
+    background-color:#DDDDDD;
+    height: 100vh;
+    position: fixed;
+    left : 0;
 `;
 
 export const Dashboard = styled.div`
-    width: 80%;
+    width: 100%;
     min-height: 100vh;
     display: flex;
     flex-flow: column wrap;
+    margin-left:300px;
+`;
+
+export const UserFeed = styled.div`
+    margin : 60px 0px 0px 50px ;
+`
+
+export const SearchInput = styled.input`
+    ${InputStyle}
+    padding : 0.5em 0.5em;
+    font-size: 0.9em;
+    outline: none;
+    border-radius : 5px;
+`;
+
+export const SearchStyle = styled(RowDiv)`
+    width: 100%;
+    background-color: green;
+    color: white;
+    position : fixed;
+    left: 300px;
+    padding: 10px;
+`
+export const SearchImageStyle = styled.img`
+    margin-left : -32px;
 `;
 
 export const AddUserForm = styled.form`
@@ -156,9 +185,51 @@ export const UnorderedList = styled.ul`
     list-style-type: none;  
     text-align : left;
 `
-
-
 export const ListItem = styled.li`
     padding: 10px;
     font-size: bold;
 `
+export const FeedSize = styled.div`
+    display: flex;
+    flex-direction : column;
+    background-color : white;
+    border : thin solid #dddddd;
+    border-radius : 10px; 
+    margin : 10px 0px;
+    padding : 5px;
+    width : 500px;
+`;
+
+
+export const TextArea = styled.textarea`
+    width : 90%;
+    border: none;
+    outline : none;
+    font-size : 1.5em;
+    font-weight : bold;
+    wrap: none;
+`;
+
+export const Toolbar = styled.div`
+    display: flex;
+    border-top: solid thin #dddddd;
+    border-bottom: solid thin #dddddd;
+    padding : 5px 0px;
+    margin-bottom : 10px;
+    justify-content: space-around;
+`
+
+export const LeftDiv = styled.div`
+    text-align: left;
+`
+export const FeedForm = styled.form`
+    display: flex;
+    flex-flow: column wrap;
+    align-items : left;
+    `;
+
+export const ErrorStyle = styled.h2`
+    text-align : center;
+    font-weight : bold;
+    color : red;
+`;

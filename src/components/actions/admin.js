@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import { FETCH_FULFILLED, FETCH_FAILED, FETCH_LOGIN_FULFILLED, FETCH_LOGIN_FAILED,
     FETCH_FEED_FULFILLED, FETCH_FEED_FAILED
-} from '../constant';
+} from '../admin_user/constant';
 
 
 export function LoginDispatch (data){
@@ -46,7 +46,6 @@ export const getAllFeed = token => dispatch => {
             authorization : token
         }
     }).then((result)=>{
-        // console.log("result from ===", result.data.data.results)
         dispatch({type:FETCH_FEED_FULFILLED, payload : result.data})
     }).catch((error) => {
         dispatch({type: FETCH_FEED_FAILED, payload: error})

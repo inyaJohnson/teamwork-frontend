@@ -1,29 +1,27 @@
 import React, { Component } from 'react';
-import Layout from './Layout';
 import { connect } from 'react-redux';
 import { getAllFeed } from '../actions/admin';
-import { H4, FeedSize, UserFeed, Toolbar } from '../style';
+import { H4, Toolbar, FeedSize, UserFeed} from '../style';
 import Gif from '../admin_user/Gif';
 import { time } from '../functions/time';
-import Delete from '../svg/delete.svg';
+import Layout from './Layout';
+import AddFeed from './AddFeed';
+import Like from '../svg/like.svg';
+import Dislike from '../svg/dislike.svg';
+import Comment from '../svg/comment.svg';
 
+class Home extends Component{
 
-
-class Feed extends Component{
-    componentDidMount = () =>{
-        const token = localStorage.getItem('adminToken');
-        this.props.feedDispatch(token);
-    }
-
-    onClickHandler = (id) => {
-        console.log (id);
-    }
+    // onClickHandler = (id) => {
+        
+    // }
 
     render(){
         const title = "Teamwork Feed";
         return(
             <Layout title={title}>
-                <UserFeed> 
+                <UserFeed>
+                    <AddFeed />   
                     {
                     !this.props.loading ? <div>...Loading</div> :
                         this.props.feed.results.map((item, index) => {
@@ -33,7 +31,9 @@ class Feed extends Component{
                                     <Gif imageUrl={item.article_url} />
                                     <h5>{time(item.createdon)}</h5>
                                     <Toolbar>
-                                        <img src={Delete} alt='Delete' onClick={() => this.onClickHandler(item.id)} />
+                                        <img src={Like} alt='like' />
+                                        <img src={Dislike} alt='dislike' />
+                                        <img src={Comment} alt='comment' />
                                     </Toolbar>
                                 </FeedSize>
                             
@@ -42,11 +42,17 @@ class Feed extends Component{
                     }
                 </UserFeed>
             </Layout>
-        );   
-    }    
+        )
+    }
+
+    componentDidMount = () => {
+        const token = localStorage.getItem('userToken');
+        this.props.feedDispatch(token);
+    }
+
 }
 
-const mapStateToProps = state =>{
+const mapStateToProps = state => {
     return {
         feed : state.feedList.feed.data,
         loading : state.feedList.fetched
@@ -55,8 +61,7 @@ const mapStateToProps = state =>{
 
 const mapDispatchToProps = dispatch => {
     return{
-        feedDispatch : (token) => dispatch(getAllFeed(token))
+        feedDispatch : token => dispatch(getAllFeed(token))
     }
 }
-
-export default connect(mapStateToProps, mapDispatchToProps)(Feed);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

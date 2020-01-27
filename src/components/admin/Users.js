@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Layout from './Layout';
 import { getAllUsers } from '../actions/admin';
 import { connect } from 'react-redux';
-import { AddUserForm, OrderedList, ListItem } from '../style'
+import { AddUserForm, OrderedList, ListItem } from '../style';
 
 class Users extends Component{
     constructor(props){
@@ -18,8 +18,9 @@ class Users extends Component{
     }
 
     render(){
+        const title = "Teamwork Users";
         return(
-            <Layout>
+            <Layout title={title}>
                 <AddUserForm>
                     <OrderedList>
                     {

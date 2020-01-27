@@ -1,8 +1,8 @@
 import React from 'react';
-import { LoginButton, Input, Form, LoginForm, RowDiv, H4, H5, Item } from './style';
-import { loginValidator } from './functions/validate';
+import { LoginButton, Input, Form, LoginForm, RowDiv, H4, H5, Item } from '../style';
+import { loginValidator } from '../functions/validate';
 import { Error } from './Error';
-import './style2.css';
+import '../style2.css';
 
 const Login = (props) =>{
     const { title, Background, onChangeHandler, onSubmitHandler, userName, password, placeholder, errorMessage } = props;

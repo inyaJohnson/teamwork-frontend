@@ -1,4 +1,4 @@
-import { USER_LOGIN_START, USER_LOGIN_FULFILLED, USER_LOGIN_FAILED } from '../constant';
+import { USER_LOGIN_START, USER_LOGIN_FULFILLED, USER_LOGIN_FAILED } from '../admin_user/constant';
 
 const initialState = {
     user : {},
@@ -16,7 +16,7 @@ export function userLoginReducer(state = initialState, action){
             return{ ...state, fetching : false, fetched : true, user: action.payload }
         }
         case USER_LOGIN_FAILED : {
-            return { ...state, fetching : false, fetched : false, error: action.payload }
+            return { ...state, fetching : false, fetched :false, error: action.payload }
         }
         default : return state
     }
